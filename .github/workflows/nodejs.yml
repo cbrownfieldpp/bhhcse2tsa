@@ -1,4 +1,4 @@
-name: Node CI
+name: Deploy to Firebase Hosting (Production)
 
 on: 
   push:
@@ -20,10 +20,17 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-    - name: build, bundle, test, deploy
+    - name: Build & Bundle
       run: |
         npm install
         npm i -g firebase-tools
-        npm run deploy:web:ci
+        npm run build:ts
+        npm run bundle
+    - name: Test
+      run: |
+        npm run test
+    - name: Deploy 
+      run: |
+        firebase deploy --token ${{ secrets.FIREBASE_TOKEN }} --only hosting
       env:
         CI: true
