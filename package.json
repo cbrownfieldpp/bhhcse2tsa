@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Berkshire Hathaway Homestate Companies - Software Engineer II - Techincal Assessment",
   "scripts": {
-    "test": "echo 'No tests currently' && exit 0",
+    "test": "./node_modules/.bin/mocha js/tests",
     "emulate:web": "firebase emulators:start --only hosting",
     "build:ts": "./node_modules/typescript/bin/tsc",
     "build:ts:watch": "./node_modules/typescript/bin/tsc -w",
