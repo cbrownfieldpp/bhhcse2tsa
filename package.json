@@ -1,0 +1,42 @@
+{
+  "name": "bhhcse2tsa",
+  "version": "1.0.0",
+  "description": "Berkshire Hathaway Homestate Companies - Software Engineer II - Techincal Assessment",
+  "scripts": {
+    "test": "echo 'No tests currently' && exit 0",
+    "emulate:web": "firebase emulators:start --only hosting",
+    "build:ts": "./node_modules/typescript/bin/tsc",
+    "build:ts:watch": "./node_modules/typescript/bin/tsc -w",
+    "build:minify": "uglify lib/* --compress --mange -o public/js/*",
+    "bundle": "./node_modules/.bin/browserify js/index.js > public/bundle.js",
+    "bundle:watch": "./node_modules/.bin/watchify js -v -o public/bundle.js",
+    "build": "npm run build:ts && npm run bundle",
+    "deploy:web": "npm run build && npm run test && firebase deploy --only hosting"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.1.7",
+    "@types/mocha": "^5.2.6",
+    "chai": "^4.2.0",
+    "mocha": "^6.0.2",
+    "typedoc": "^0.15.2",
+    "typescript": "^3.2.4",
+    "uglify-js": "^3.6.9"
+  },
+  "dependencies": {
+    "@types/dotenv": "^6.1.0",
+    "browserify": "^16.5.0",
+    "dotenv": "^6.2.0",
+    "watchify": "^3.11.1"
+  },
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cbrownfieldpp/bhhcse2tsa.git"
+  },
+  "author": "Cameron Brownfield",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cbrownfieldpp/bhhcse2tsa/issues"
+  },
+  "homepage": "https://github.com/cbrownfieldpp/bhhcse2tsa#readme"
+}
