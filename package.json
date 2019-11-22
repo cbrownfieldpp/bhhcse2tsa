@@ -11,7 +11,8 @@
     "bundle": "./node_modules/.bin/browserify js/index.js > public/bundle.js",
     "bundle:watch": "./node_modules/.bin/watchify js -v -o public/bundle.js",
     "build": "npm run build:ts && npm run bundle",
-    "deploy:web": "npm run build && npm run test && firebase deploy --only hosting"
+    "deploy:web": "npm run build && npm run test && firebase deploy --only hosting",
+    "deploy:web:ci": "npm run build:ts && npm run bundle && npm run test && firebase deploy --token \"$FIREBASE_TOKEN\" --only hosting"
   },
   "devDependencies": {
     "@types/chai": "^4.1.7",
