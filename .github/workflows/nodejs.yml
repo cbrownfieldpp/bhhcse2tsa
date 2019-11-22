@@ -22,7 +22,8 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - name: build, bundle, test, deploy
       run: |
-        echo ${{ secrets.FIREBASE_TOKEN }}
-
+        npm install
+        npm i -g firebase-tools
+        npm run deploy:web:ci
       env:
         CI: true
