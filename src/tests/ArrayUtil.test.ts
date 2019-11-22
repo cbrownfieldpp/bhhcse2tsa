@@ -41,9 +41,5 @@ describe('ArrayUtil Class', () => {
             expect(subset.length).to.equal(4);
         })
 
-        it('this test should fail and prevent deployment', () => {
-            expect(true).to.equal(false);
-        });
-
     });
 });
