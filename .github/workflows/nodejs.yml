@@ -3,7 +3,7 @@ name: Node CI
 on: 
   push:
     branches: 
-      - master
+      - i8
 
 jobs:
   build:
@@ -22,8 +22,6 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - name: build, bundle, test, deploy
       run: |
-        npm install
-        npm i -g firebase-tools
-        npm run deploy:web:ci
+        echo $FIREBASE_TOKEN
       env:
         CI: true
