@@ -1,4 +1,4 @@
-name: Firebase Hosting - Web (Production)
+name: Deploy to Firebase Hosting (Production)
 
 on: 
   push:
