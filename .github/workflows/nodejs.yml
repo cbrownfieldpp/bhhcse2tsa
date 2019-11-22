@@ -1,4 +1,4 @@
-name: Node CI
+name: Firebase Hosting - Web (Production)
 
 on: 
   push:
@@ -25,3 +25,4 @@ jobs:
         echo $FIREBASE_TOKEN
       env:
         CI: true
+        FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
