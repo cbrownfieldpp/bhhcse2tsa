@@ -24,6 +24,10 @@ jobs:
       run: |
         npm install
         npm i -g firebase-tools
-        npm run deploy:web:ci
+        npm run build:ts
+        npm run bundle
+        npm run test
+        firestore use bhhc-se2-tsa --token ${{ secrets.FIREBASE_TOKEN }}
+        firestore deploy --token ${{ secrets.FIREBASE_TOKEN }} --only hosting
       env:
         CI: true
