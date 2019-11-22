@@ -3,7 +3,7 @@ name: Deploy to Firebase Hosting (Production)
 on: 
   push:
     branches: 
-      - i8
+      - master
 
 jobs:
   build:
