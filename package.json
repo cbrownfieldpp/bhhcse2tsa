@@ -26,6 +26,7 @@
     "@types/dotenv": "^6.1.0",
     "browserify": "^16.5.0",
     "dotenv": "^6.2.0",
+    "ejs": "^2.7.4",
     "firebase": "^7.5.0",
     "watchify": "^3.11.1"
   },
