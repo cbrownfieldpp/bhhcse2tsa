@@ -5,6 +5,7 @@
   "scripts": {
     "test": "./node_modules/.bin/mocha js/tests",
     "emulate:web": "firebase emulators:start --only hosting",
+    "emulate:stack": "firebase serve --only functions,hosting",
     "build:ts": "./node_modules/typescript/bin/tsc",
     "build:ts:watch": "./node_modules/typescript/bin/tsc -w",
     "build:minify": "uglify lib/* --compress --mange -o public/js/*",

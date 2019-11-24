@@ -1,6 +1,11 @@
 # Berkshire Hathaway Homestate Companies - TSA
 
-## Hosted: https://cameronbrownfield-bhhcse2tsa.web.app/
+## Hosted: 
+### https://cameronbrownfield-bhhcse2tsa.web.app/
+### https://cameronbrownfield-bhhcse2tsa.firebaseapp.com/
+
+## Services:
+### https://us-central1-bhhc-se2-tsa.cloudfunctions.net/api/**
 
 ### Goals: 
 - Write an application that displays three or more reasons that you would like to work for BHHC.  Persist the list of reasons and use any means to display them.
