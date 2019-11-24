@@ -104,7 +104,7 @@
         <div class="album py-5 bg-light">
             <div class="container">
                 <div class="row">
-                    {{#each notes}}
+                    {{#each formattedNotes}}
                     <div class="col-md-4">
                         <div class="card mb-4 box-shadow">
                             {{#if img}}
@@ -119,7 +119,7 @@
                                         <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
                                     </div>
                                     {{/if}} --}}
-                                    <small class="text-muted">{{created}}</small>
+                                    <small class="text-muted">{{timeSince}}</small>
                                 </div>
                             </div>
                         </div>
