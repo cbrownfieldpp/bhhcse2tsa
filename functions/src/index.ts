@@ -1,44 +1,39 @@
 import * as functions from 'firebase-functions';
 import firebase from 'firebase-admin';
 import engines from 'consolidate';
-
-// tslint:disable-next-line:no-implicit-dependencies
 import express from 'express';
+import NoteService from './services/NoteService';
+import cors from 'cors';
 
+/** Firestore config. */
 const firebaseApp = firebase.initializeApp();
-
 const db = firebaseApp.firestore();
 
-function getNotes () {
-    return db.collection('notes').get().then((snapshot) => {
-        const notes: any[] = [];
-        snapshot.forEach((doc) => {
-            notes.push(doc.data());
-        });
-        return notes;
-    });
-};
+/** Services */
+/** Note: Since the services are local, we can access them without a request for the static site. */
+/** They're all being exposed via cloud functions as well though with REST methods. */
+const noteService = new NoteService(db);
 
-/** Since the app will server dynamic "reasons to work at BHHC", we'll create some dynamic views using handlebars. */
-const app = express();
-app.engine('hbs', engines.handlebars)
-app.set('views', './views');
-app.set('view engine', 'hbs');
+/** Express webapp config. */
+const _app = express();
+_app.engine('hbs', engines.handlebars)
+_app.set('views', './views');
+_app.set('view engine', 'hbs');
 
-app.get('/', (request, response) => {
-    getNotes().then((notes) => {
-        console.log(notes);
+/** Default View */
+_app.get('/', (request, response) => {
+    noteService.fetchNotes(9).then((notes) => {
         response.render('index', { notes });
-        // response.send("Hellow world.")
     }).catch((err) => {
         console.log(err);
     });
 });
 
-app.get('/notes', (request, response) => {
-    getNotes().then((notes) => {
-        response.send(notes);
-    });
-});
+/** Express for services routing. */
+const _api = express();
+_api.use(cors({ origin: true }));
+_api.use('/notes', noteService.router);
 
-export const webapp = functions.https.onRequest(app)
+
+export const app = functions.https.onRequest(_app)
+export const api = functions.https.onRequest(_api);

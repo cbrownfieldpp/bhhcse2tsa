@@ -10,7 +10,7 @@
     "rewrites": [
       {
         "source": "/",
-        "function": "webapp"
+        "function": "app"
       }, {
         "source": "**",
         "destination": "/404.html"
