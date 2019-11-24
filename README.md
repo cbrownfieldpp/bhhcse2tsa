@@ -17,6 +17,7 @@
 - Provide sample automated test cases where appropriate.
 - Make sure it is your original work and not the intellectual property of someone else.
 - Avoid reposting the sample code from a book, blog, question answer site, or training site.
+- Join my development board: https://trello.com/invite/b/gRWjjUyT/2f71093259d30095295692c8c11b0e03/bhhc-tsa
 
 ---
 ### Intended Solution Proposal:
