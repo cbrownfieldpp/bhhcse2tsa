@@ -1,5 +1,5 @@
 import ArrayUtil from './lib/ArrayUtil';
 
-
-console.log(ArrayUtil.randomSubset([{ a: 'a'}, { b: 'b' }, { c: 'c' }], 2));
-console.log("Continuous integration is working!");
+/** Local scripting can go here. */
+const subset: any[] = ArrayUtil.randomSubset([{ a: 'a'}, { b: 'b' }, { c: 'c'}, { d: 'd'}, { e: 'e' }], 3);
+console.log("My ArrayUtil.randomSubset() called from local JS bundle: ", subset);

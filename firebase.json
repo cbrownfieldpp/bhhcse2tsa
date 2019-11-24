@@ -9,8 +9,11 @@
     ],
     "rewrites": [
       {
+        "source": "/",
+        "function": "webapp"
+      }, {
         "source": "**",
-        "destination": "/index.html"
+        "destination": "/404.html"
       }
     ]
   },
