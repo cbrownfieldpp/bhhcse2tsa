@@ -19,6 +19,10 @@ export default class NoteService {
     public getNote = (req: express.Request, res: express.Response) => {
         this.db.collection('notes').doc(req.params.id).get().then((document) => {
             res.send(document.data());
+        }).catch((err) => {
+            res.status(500);
+            res.send({ error: "error fetching note "+req.params.id });
+            console.log("getNote() err: ", err);
         });
     }
 
