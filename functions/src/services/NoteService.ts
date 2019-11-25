@@ -52,8 +52,10 @@ export default class NoteService {
     }
 
     /** COMMON FUNCTIONAL METHODS */
+
+    /** Fetch the most recent notes. */
     public fetchNotes = (limit: number): Promise<any[]> => {
-        return this.db.collection('notes').get().then((snapshot) => {
+        return this.db.collection('notes').orderBy('created', 'desc').get().then((snapshot) => {
             const notes: any[] = [];
             snapshot.forEach((doc) => {
                 notes.push(doc.data());
