@@ -56,6 +56,37 @@ body {
     font-size: 13px;
 }
 
+/** Bootstrap overrides. **/
+
+.banner {
+    background-image: url("../img/banner978x244.jpg");
+    background-color: #6ea4da;
+    height: 244px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.jumbotron {
+    margin-bottom: 0rem;
+    border-radius: 0rem;
+}
+
+.bg-dark-override {
+    background-color: #18222d;
+}
+
+.jumbotron-heading {
+    max-width: 540px;
+    text-align: center;
+}
+
+h5 {
+    font-size: 1.18rem;
+}
+
+/** End bootstrap overrides. */
+
 @media (max-width: 600px) {
 
     body,
@@ -66,6 +97,6 @@ body {
     }
 
     body {
-        border-top: 16px solid #ffa100;
+        border-top: 16px solid #797979;
     }
 }
