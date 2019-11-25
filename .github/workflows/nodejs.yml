@@ -31,6 +31,6 @@ jobs:
         npm run test
     - name: Deploy 
       run: |
-        firebase deploy --token ${{ secrets.FIREBASE_TOKEN }} --only hosting --message ${{ github.sha }}
+        firebase deploy --token ${{ secrets.FIREBASE_TOKEN }} --only hosting,functions --message ${{ github.sha }}
       env:
         CI: true
