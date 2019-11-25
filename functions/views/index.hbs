@@ -29,7 +29,7 @@
 
 <body>
     <header>
-        <div class="collapse bg-dark" id="navbarHeader">
+        <div class="collapse bg-dark-override" id="navbarHeader">
             <div class="container">
                 <div class="row">
                     <div class="col-sm-8 col-md-7 py-4">
@@ -42,15 +42,15 @@
                     <div class="col-sm-4 offset-md-1 py-4">
                         <h4 class="text-white">Contact</h4>
                         <ul class="list-unstyled">
-                            <li><a href="#" class="text-white">cameronbrownfield@gmail.com</a></li>
-                            <li><a href="#" class="text-white">(530) 713-3680</a></li>
-                            <li><a href="#" class="text-white">https://www.linkedin.com/in/cameronbrownfield/</a></li>
+                            <li><a href="mailto:cameronbrownfield@gmail.com" class="text-white">cameronbrownfield@gmail.com</a></li>
+                            <li><a href="tel:1-530-713-3680" class="text-white">(530) 713-3680</a></li>
+                            <li><a href="https://www.linkedin.com/in/cameronbrownfield/" class="text-white">Connect on LinkedIn</a></li>
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="navbar navbar-dark bg-dark box-shadow">
+        <div class="navbar navbar-dark bg-dark-override box-shadow">
             <div class="container d-flex flex-row-reverse">
                 <!-- Google Sign-In Button Integration -->
                 <div id="my-signin2" onload="renderButton()"></div>
@@ -87,8 +87,7 @@
     </header>
 
     <main role="main">
-
-        <section class="jumbotron text-center">
+        <section class="jumbotron text-center banner">
             <div class="container">
                 <h1 class="jumbotron-heading">Berkshire Hathaway Homestate Companies</h1>
                 <p class="lead text-muted"></p>
@@ -99,6 +98,7 @@
                 </p>
                 {{/if}} --}}
             </div>
+
         </section>
 
         <div class="album py-5 bg-light">
@@ -111,7 +111,8 @@
                             <img class="card-img-top" data-src={{img}} alt="Card image cap">
                             {{/if}}
                             <div class="card-body">
-                                <p class="card-text">{{title}} - {{msg}}</p>
+                                <h5 class="card-title">{{title}}</h5>
+                                <p class="card-text">{{msg}}</p>
                                 <div class="d-flex justify-content-between align-items-center">
                                     <!-- Extensible here - could allow the logged in user to edit their own reasons. -->
                                     {{!-- {{#if user}}
