@@ -29,7 +29,7 @@
     - Testing: Postman
 #### Service
     - Local Business Logic:
-        - Typescript (Compiled to Javascript)
+        - Typescript (Transpiled to Javascript)
         - Mocha/Chai (Unit Testing)
 #### Presentation Layer
     - HTML
