@@ -10,12 +10,12 @@
     <title>BHHC - TSA</title>
 
     <!-- Google Sign-In -->
-    <meta name="google-signin-client_id"
+    {{!-- <meta name="google-signin-client_id"
         content="878761180183-85btblakqomhl2709ajse0eggfbklmph.apps.googleusercontent.com">
     <meta name="google-signin-cookiepolicy" content="single_host_origin">
     <meta name="google-signin-scope" content="profile email">
     <script src="https://apis.google.com/js/platform.js" async defer></script>
-    <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
+    <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script> --}}
 
     <!-- Static local scripts. -->
     <script src="bundle.js" async defer></script>
@@ -51,9 +51,10 @@
             </div>
         </div>
         <div class="navbar navbar-dark bg-dark-override box-shadow">
-            <div class="container d-flex flex-row-reverse">
+            <div class="container d-flex flex-row">
+                <!-- If uncommenting google sign in - update row above to be flex-row-reverse. -->
                 <!-- Google Sign-In Button Integration -->
-                <div id="my-signin2" onload="renderButton()"></div>
+                {{!-- <div id="my-signin2" onload="renderButton()"></div>
                 <script>
                     function onSuccess(googleUser) {
                         console.log('Logged in as: ' + googleUser.getBasicProfile().getName());
@@ -76,7 +77,7 @@
                             });
                         });
                     }
-                </script>
+                </script> --}}
                 <!-- End Google Sign-In Button Integration-->
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader"
                     aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
