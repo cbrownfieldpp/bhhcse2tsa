@@ -31,7 +31,7 @@ jobs:
         npm run test
     - name: Deploy Hosting & Functions
       run: |
-        firebase functions:config:set data.apikey=${{ secrets.BHHC_DATA_API_KEY }}
+        firebase functions:config:set data.apikey=${{ secrets.BHHC_DATA_API_KEY }} --token ${{ secrets.FIREBASE_TOKEN }}
         firebase deploy --token ${{ secrets.FIREBASE_TOKEN }} --only hosting,functions --message ${{ github.sha }}
     - name: Post-Deployment - Run Production Integration Tests (Newman)
       run: |
