@@ -3,9 +3,9 @@ import * as admin from 'firebase-admin';
 import moment from 'moment';
 
 /**Interviewer Note: With Firebase/Firestore, datastore routes are exposed, but defining a limited subset via 
- * cloudfunctions comes with the benefit that I can block all read/write access to my datastore enpoints
- * and leave it open only to my CloudFunctions project, exposing only the methods I want as well as controlling 
- * how the data gets pulled with validatable queries. 
+ * cloud-functions comes with the benefit that I can block all read/write access to my datastore enpoints
+ * and leave it open only to my cloud-functions project. This allows me to expose only the methods I want 
+ * as well as controlling how the data gets pulled with validatable queries. 
  * 
  * Note the use of this in the following methods where I define the GET api/notes route to have a default max limit
  * of size 10, and allow the requester to define this limit in the query string. 
