@@ -13,7 +13,7 @@
     "bundle:watch": "./node_modules/.bin/watchify js -v -o public/bundle.js",
     "build": "npm run build:ts && npm run bundle",
     "deploy:web": "npm run build && npm run test && firebase deploy --only hosting",
-    "api:test:local": "node .newman/tests/integration-local.text.js", 
+    "api:test:local": "node .newman/tests/integration-local.test.js", 
     "api:test:prod": "node .newman/tests/integration-prod.test.js"
   },
   "devDependencies": {
