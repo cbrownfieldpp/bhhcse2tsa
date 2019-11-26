@@ -17,7 +17,6 @@ export default class NoteService {
     /** PUBLIC ROUTES */
     /** GET api/notes/:id */
     public getNote = (req: express.Request, res: express.Response) => {
-        console.log("here: ", (req.params.id));
         this.db.collection('notes').doc(req.params.id).get().then((document) => {
             res.send(document.data());
         }).catch((err) => {
@@ -50,7 +49,8 @@ export default class NoteService {
      * ?limit={max:10}
      * */
     public getNotes = (req: express.Request, res: express.Response) => {
-        const limit: number = req.query.limit <= 10 ? +req.params.limit : 10;
+        const limit: number = req.query.limit <= 10 ? +req.query.limit : 10;
+        console.log("LIMIT: ", limit, typeof(limit));
         this.fetchNotes(limit)
             .then((notes: any[]) => res.send(notes))
             .catch((err) => console.log(err));
@@ -60,7 +60,7 @@ export default class NoteService {
 
     /** Fetch the most recent notes. */
     public fetchNotes = (limit: number): Promise<any[]> => {
-        return this.db.collection('notes').orderBy('created', 'desc').get().then((snapshot) => {
+        return this.db.collection('notes').orderBy('created', 'desc').limit(limit).get().then((snapshot) => {
             const notes: any[] = [];
             snapshot.forEach((doc) => {
                 notes.push(doc.data());
