@@ -2,6 +2,14 @@ import express from 'express';
 import * as admin from 'firebase-admin';
 import moment from 'moment';
 
+/**Interviewer Note: With Firebase/Firestore, datastore routes are exposed, but defining a limited subset via 
+ * cloudfunctions comes with the benefit that I can block all read/write access to my datastore enpoints
+ * and leave it open only to my CloudFunctions project, exposing only the methods I want as well as controlling 
+ * how the data gets pulled with validatable queries. 
+ * 
+ * Note the use of this in the following methods where I define the GET api/notes route to have a default max limit
+ * of size 10, and allow the requester to define this limit in the query string. 
+ */
 export default class NoteService {
 
     public router = express.Router();
@@ -9,8 +17,13 @@ export default class NoteService {
     constructor(
         private db: admin.firestore.Firestore
     ) {
+        /** GET api/notes */
         this.router.get('/', this.getNotes);
+
+        /** GET api/notes/:id */
         this.router.get('/:id', this.getNote);
+
+        /** POST api/notes */
         this.router.post('/', this.postNote);
     }
 
@@ -21,8 +34,8 @@ export default class NoteService {
             res.send(document.data());
         }).catch((err) => {
             res.status(500);
-            res.send({ error: "error fetching note "+req.params.id });
-            console.log("getNote() err: ", err);
+            res.send({ error: "error fetching note " + req.params.id });
+            console.log("NoteService:getNote():", err);
         });
     }
 
@@ -34,14 +47,14 @@ export default class NoteService {
             msg: req.body.msg,
             title: req.body.title
         };
-        this.db.collection('notes').add(record).then(function(docRef) {
+        this.db.collection('notes').add(record).then(function (docRef) {
             record.id = docRef.id;
             res.status(201);
             res.send(record);
-        }).catch(function(error) {
+        }).catch(function (error) {
             res.status(500);
             res.send({ error: 'failed to add document' });
-            console.error("Error adding document: ", error);
+            console.error("NoteService:postNote():", error);
         });
     }
 
@@ -50,16 +63,21 @@ export default class NoteService {
      * */
     public getNotes = (req: express.Request, res: express.Response) => {
         const limit: number = req.query.limit <= 10 ? +req.query.limit : 10;
-        console.log("LIMIT: ", limit, typeof(limit));
-        this.fetchNotes(limit)
-            .then((notes: any[]) => res.send(notes))
-            .catch((err) => console.log(err));
+        this.fetchNotes(limit).then((notes: any[]) => {
+            res.send(notes)
+        }).catch((err) => {
+            res.status(500);
+            res.send({error: 'failed to fetch documents'})
+            console.error("NoteService:getNotes():", err);
+        });
     }
+
+    /** END PUBLIC ROUTES */
 
     /** COMMON FUNCTIONAL METHODS */
 
     /** Fetch the most recent notes. */
-    public fetchNotes = (limit: number): Promise<any[]> => {
+    public fetchNotes = (limit: number): Promise < any[] > => {
         return this.db.collection('notes').orderBy('created', 'desc').limit(limit).get().then((snapshot) => {
             const notes: any[] = [];
             snapshot.forEach((doc) => {
@@ -68,5 +86,7 @@ export default class NoteService {
             return notes;
         });
     };
+
+    /** END COMMON FUNCTIONAL METHODS */
 
 }
