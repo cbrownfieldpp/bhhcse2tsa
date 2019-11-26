@@ -17,6 +17,7 @@ export default class NoteService {
     /** PUBLIC ROUTES */
     /** GET api/notes/:id */
     public getNote = (req: express.Request, res: express.Response) => {
+        console.log("here: ", (req.params.id));
         this.db.collection('notes').doc(req.params.id).get().then((document) => {
             res.send(document.data());
         }).catch((err) => {

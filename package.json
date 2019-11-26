@@ -12,13 +12,16 @@
     "bundle": "./node_modules/.bin/browserify js/index.js > public/bundle.js",
     "bundle:watch": "./node_modules/.bin/watchify js -v -o public/bundle.js",
     "build": "npm run build:ts && npm run bundle",
-    "deploy:web": "npm run build && npm run test && firebase deploy --only hosting"
+    "deploy:web": "npm run build && npm run test && firebase deploy --only hosting",
+    "api:test:local": "node .newman/tests/integration-local.text.js", 
+    "api:test:prod": "node .newman/tests/integration-prod.test.js"
   },
   "devDependencies": {
     "@types/chai": "^4.1.7",
     "@types/mocha": "^5.2.6",
     "chai": "^4.2.0",
     "mocha": "^6.0.2",
+    "newman": "^4.5.6",
     "typedoc": "^0.15.2",
     "typescript": "^3.2.4",
     "uglify-js": "^3.6.9"
