@@ -12,7 +12,9 @@
 1. [Checkout the Final Product](https://cameronbrownfield-bhhcse2tsa.web.app/)
 2. [View my Developmental Trello Board for this Project - Invite Link!](https://trello.com/invite/b/gRWjjUyT/2f71093259d30095295692c8c11b0e03/bhhc-tsa)
 3. [View some of the noteworthy files in this project!](#noteworthy-filesdir-for-interviewer-easy-access)
-4. Contact me to set up an interview: cameronbrownfield@gmail.com
+4. [View the automated deployment process](https://github.com/cbrownfieldpp/bhhcse2tsa/runs/322175859)
+5. Contact me to set up an interview: cameronbrownfield@gmail.com
+
 
 ---
 
