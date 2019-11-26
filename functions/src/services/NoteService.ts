@@ -1,3 +1,4 @@
+import { isApiAuthenticated } from './../middleware/AuthenticationMiddleware';
 import express from 'express';
 import * as admin from 'firebase-admin';
 import moment from 'moment';
@@ -24,7 +25,7 @@ export default class NoteService {
         this.router.get('/:id', this.getNote);
 
         /** POST api/notes */
-        this.router.post('/', this.postNote);
+        this.router.post('/', isApiAuthenticated, this.postNote);
     }
 
     /** PUBLIC ROUTES */
