@@ -22,12 +22,13 @@
 ---
 ### Intended Solution Proposal:
 #### Persistence Layer
-    - Firestore Datastore
-    - Firestore REST
-    - CloudFunctions
-        - Node.js 8.15
-    - Testing: Postman
+    - Firestore Datastore/SDK
+    - Interacted with via CloudFunctions or Services
 #### Service
+    - Server Services:
+        - CloudFunctions
+            - Node.js 8.15
+        - Testing: Postman/Newman(CI)
     - Local Business Logic:
         - Typescript (Transpiled to Javascript)
         - Mocha/Chai (Unit Testing)
@@ -36,4 +37,25 @@
     - Bootstrap (CSS) 
 #### Continuous Integration
     - Github Actions
+---
+### Noteworthy Files/Dir (For Interviewer Easy Access):
+#### This Document
+- [README](README.md) 
+
+#### Client Side Scripts & Unit Testing Example
+- [Client-Side Scripts](src/) 
+- [Client-Side Example Class](src/lib/ArrayUtil.ts)
+- [Client-Side Example Unit Testing](src/tests/ArrayUtil.test.ts)
+- [Client-Side Compiled Docs](docs/index.html) (Pull down Locally and then Open)
+
+#### Server Side Index/Services
+- [Server-Side Scripts](functions/src)
+- [Express and App Configuration](functions/src/index.ts)
+- [Services](functions/src/services)
+- [NoteService](functions/src/NoteService.ts)
+
+#### Presentation Layer (If static would be at public/)
+- [Views](functions/views)
+- [WebApp Main Page](functions/views/index.hbs)
+
 
