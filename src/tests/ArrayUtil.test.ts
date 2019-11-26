@@ -1,6 +1,13 @@
 import ArrayUtil from '../lib/ArrayUtil';
 import * as chai from 'chai';
 
+/**Interviewer Notes: This is an example file to display how local JS can be unit tested. 
+ * Using Chai we can define our Unit Tests and run them with the 'mocha' UT runner locally or 
+ * during continuous integration scripting.
+ * 
+ * The following are 6 unit tests, testing the example method ArrayUtil::randomSubset().
+ */
+
 const expect = chai.expect;
 
 describe('ArrayUtil Class', () => {
