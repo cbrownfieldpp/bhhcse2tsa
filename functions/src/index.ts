@@ -18,6 +18,7 @@ const noteService = new NoteService(db);
 
 /** Express webapp config. */
 const _app = express();
+_app.use(cors({ origin: true }));
 _app.engine('hbs', engines.handlebars)
 _app.set('views', './views');
 _app.set('view engine', 'hbs');
