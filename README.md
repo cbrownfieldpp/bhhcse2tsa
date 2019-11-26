@@ -8,13 +8,14 @@
 ### https://us-central1-bhhc-se2-tsa.cloudfunctions.net/api/**
 
 ### How to use this document:
-1. Checkout the hosted link. 
-2. Checkout the trello board: https://trello.com/invite/b/gRWjjUyT/2f71093259d30095295692c8c11b0e03/bhhc-tsa
-3. Checkout the files of interest listed below. 
-4. Contact me, and let me screen share the deployment process and answer any additional questions you may have. 
+1. [Checkout the Final Product](https://cameronbrownfield-bhhcse2tsa.web.app/)
+2. [View my Developmental Trello Board for this Project - Invite Link!](https://trello.com/invite/b/gRWjjUyT/2f71093259d30095295692c8c11b0e03/bhhc-tsa)
+3. [View some of the noteworthy files in this project!](#noteworthy-filesdir-for-interviewer-easy-access)
+4. Contact me to set up an interview: cameronbrownfield@gmail.com
+
 ---
 
-### Goals: 
+### Goals (As Instructed by BHHC): 
 - Write an application that displays three or more reasons that you would like to work for BHHC.  Persist the list of reasons and use any means to display them.
 - Show off your in-depth knowledge of a particular subject area or tools.
 - We are interested in seeing your use of patterns and best practices in the design and coding techniques.
