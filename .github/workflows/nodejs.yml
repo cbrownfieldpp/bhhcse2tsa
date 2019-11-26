@@ -33,13 +33,13 @@ jobs:
       run: |
         firebase serve --token ${{ secrets.FIREBASE_TOKEN }} --only hosting,functions & 
         sleep 20
-        ./node_modules/.bin/newman run https://api.getpostman.com/collections/9563315-53cd1b2f-21de-4e20-b94f-97ca0c7c1f9f?apikey=${{ secrets.POSTMAN_API_KEY }} -e https://api.getpostman.com/environments/9563315-ace70801-6d11-4504-b96a-b2cfabb9abf9?apikey=${{ secrets.POSTMAN_API_KEY }} -r cli 
+        ./node_modules/.bin/newman run https://api.getpostman.com/collections/9563315-53cd1b2f-21de-4e20-b94f-97ca0c7c1f9f?apikey=${{ secrets.POSTMAN_API_KEY }} -e https://api.getpostman.com/environments/9563315-695708fa-4101-4ac3-bda2-b85cf316d1c1?apikey=${{ secrets.POSTMAN_API_KEY }} -r cli 
     - name: Deploy Hosting & Functions
       run: |
         firebase deploy --token ${{ secrets.FIREBASE_TOKEN }} --only hosting,functions --message ${{ github.sha }}
     - name: Post-Deployment - Run Production Integration Tests
       run: |
         sleep 30
-        ./node_modules/.bin/newman run https://api.getpostman.com/collections/9563315-53cd1b2f-21de-4e20-b94f-97ca0c7c1f9f?apikey=${{ secrets.POSTMAN_API_KEY }} -e https://api.getpostman.com/environments/9563315-695708fa-4101-4ac3-bda2-b85cf316d1c1?apikey=${{ secrets.POSTMAN_API_KEY }} -r cli 
+        ./node_modules/.bin/newman run https://api.getpostman.com/collections/9563315-53cd1b2f-21de-4e20-b94f-97ca0c7c1f9f?apikey=${{ secrets.POSTMAN_API_KEY }} -e https://api.getpostman.com/environments/9563315-ace70801-6d11-4504-b96a-b2cfabb9abf9?apikey=${{ secrets.POSTMAN_API_KEY }} -r cli 
       env:
         CI: true
