@@ -61,7 +61,7 @@
 - [Server-Side Scripts](functions/src)
 - [Express and App Configuration](functions/src/index.ts)
 - [Services](functions/src/services)
-- [Services-NoteService](functions/src/NoteService.ts)
+- [Services-NoteService](functions/src/services/NoteService.ts)
 
 #### Presentation Layer (If static would be at public/)
 - [Views](functions/views)
