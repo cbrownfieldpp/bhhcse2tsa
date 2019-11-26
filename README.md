@@ -7,6 +7,13 @@
 ## Services:
 ### https://us-central1-bhhc-se2-tsa.cloudfunctions.net/api/**
 
+### How to use this document:
+1. Checkout the hosted link. 
+2. Checkout the trello board: https://trello.com/invite/b/gRWjjUyT/2f71093259d30095295692c8c11b0e03/bhhc-tsa
+3. Checkout the files of interest listed below. 
+4. Contact me, and let me screen share the deployment process and answer any additional questions you may have. 
+---
+
 ### Goals: 
 - Write an application that displays three or more reasons that you would like to work for BHHC.  Persist the list of reasons and use any means to display them.
 - Show off your in-depth knowledge of a particular subject area or tools.
@@ -20,6 +27,7 @@
 - Join my development board: https://trello.com/invite/b/gRWjjUyT/2f71093259d30095295692c8c11b0e03/bhhc-tsa
 
 ---
+
 ### Intended Solution Proposal:
 #### Persistence Layer
     - Firestore Datastore/SDK
@@ -38,6 +46,7 @@
 #### Continuous Integration
     - Github Actions
 ---
+
 ### Noteworthy Files/Dir (For Interviewer Easy Access):
 #### This Document
 - [README](README.md) 
@@ -46,16 +55,17 @@
 - [Client-Side Scripts](src/) 
 - [Client-Side Example Class](src/lib/ArrayUtil.ts)
 - [Client-Side Example Unit Testing](src/tests/ArrayUtil.test.ts)
-- [Client-Side Compiled Docs](docs/index.html) (Pull down Locally and then Open)
+- [Client-Side Compiled Docs](docs/index.html) (Pull down Locally and then Open @docs/index.html)
 
 #### Server Side Index/Services
 - [Server-Side Scripts](functions/src)
 - [Express and App Configuration](functions/src/index.ts)
 - [Services](functions/src/services)
-- [NoteService](functions/src/NoteService.ts)
+- [Services-NoteService](functions/src/NoteService.ts)
 
 #### Presentation Layer (If static would be at public/)
 - [Views](functions/views)
 - [WebApp Main Page](functions/views/index.hbs)
 
-
+#### Scripts & Dependencies
+- [NPM-Scripts](package.json)
