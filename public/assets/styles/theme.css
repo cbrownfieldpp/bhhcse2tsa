@@ -1,3 +1,5 @@
+/** STATIC CSS RESOURCE */
+
 body {
     background: #ECEFF1;
     color: rgba(0, 0, 0, 0.87);
@@ -56,7 +58,10 @@ body {
     font-size: 13px;
 }
 
-/** Bootstrap overrides. **/
+/** CUSTOM CSS BEGIN **/
+/**Interviewer Note: I began with some bootstrap css to give a good starting point, then modified the base 
+  *html template and *CSS here to suit the objectives.
+  */
 
 .banner {
     background-image: url("../img/banner978x244.jpg");
@@ -85,7 +90,7 @@ h5 {
     font-size: 1.18rem;
 }
 
-/** End bootstrap overrides. */
+/** CUSTOM CSS END */
 
 @media (max-width: 600px) {
 
